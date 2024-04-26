@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">HamroCinema</string>
+    <string name="button_name">Get Movies</string>
+    <string name="token">"Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkNDRkMWZhZGFhN2JhMDdlNTQzNTZmY2JmNDA3ODExZSIsInN1YiI6IjYzODFjM2FhZmI4MzQ2MDA4NDNmZjZlZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.7bEz0nNg3LPjvKunq0o1aPVQAoTBkm1TED-VRdaueFc
+</string>
+    <string name="rating">Vote Average : </string>
+
+    <string name="movie_title">Movie Title</string>
+    <string name="movie_overview">Movie overview</string>
+    <string name="watch">Watch</string>
+</resources>

@@ -1,0 +1,10 @@
+
+D
+java:S1604@"(Make this anonymous inner class a lambda(ğä–]8™ÌÏüğ1
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÚÍ›¸8ÌÏüğ1
+^
+java:S1874L"ARemove this use of "overridePendingTransition"; it is deprecated.(¥øÑ8½ÌÏüğ1
+E
+java:S1185W"(Remove this method to simply inherit it.(ÛÙÊı8¿ÌÏüğ1
+O
+java:S1068d"-Remove this unused "movieDesc" private field.(Öµşÿÿÿÿ8ÄÌÏüğ1
