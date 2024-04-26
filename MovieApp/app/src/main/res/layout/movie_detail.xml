@@ -75,13 +75,13 @@
                             android:layout_height="wrap_content"
                             android:numStars="10"
                             android:rating="5"
-                            app:layout_constraintBottom_toTopOf="@+id/button"
+                            app:layout_constraintBottom_toTopOf="@+id/set_wallpaper"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"></RatingBar>
 
                         <Button
-                            android:id="@+id/button"
+                            android:id="@+id/set_wallpaper"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/watch"
@@ -127,7 +127,8 @@
                 <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
                     android:id="@+id/trailer_player"
                     android:layout_width="match_parent"
-                    android:layout_height="250dp">
+                    android:layout_height="250dp"
+                    app:autoPlay="false">
                 </com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView>
 
             </LinearLayout>

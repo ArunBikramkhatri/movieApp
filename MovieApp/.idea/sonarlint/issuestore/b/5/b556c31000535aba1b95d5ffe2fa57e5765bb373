@@ -1,10 +1,17 @@
 
+m	java:S117="QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(òÉÂ8êâÈñ1
 D
-java:S1604@"(Make this anonymous inner class a lambda(ğä–]8™ÌÏüğ1
-v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÚÍ›¸8ÌÏüğ1
+java:S1604A"(Make this anonymous inner class a lambda(ğä–]8ŸêâÈñ1
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÚÍ›¸8¢êâÈñ1
+X	java:S125;"<This block of commented-out lines of code should be removed.(î‰¸÷8ÉêâÈñ1
 ^
-java:S1874L"ARemove this use of "overridePendingTransition"; it is deprecated.(¥øÑ8½ÌÏüğ1
+java:S1874M"ARemove this use of "overridePendingTransition"; it is deprecated.(¥øÑ8ÑêâÈñ1
 E
-java:S1185W"(Remove this method to simply inherit it.(ÛÙÊı8¿ÌÏüğ1
+java:S1185X"(Remove this method to simply inherit it.(ÛÙÊı8ÓêâÈñ1
+X	java:S125m"<This block of commented-out lines of code should be removed.(¶“‘8äìâÈñ1
+P
+java:S1068d".Remove this unused "movieTitle" private field.(‡Òşøÿÿÿÿ8çìâÈñ1
 O
-java:S1068d"-Remove this unused "movieDesc" private field.(Öµşÿÿÿÿ8ÄÌÏüğ1
+java:S1068e"-Remove this unused "movieDesc" private field.(Öµşÿÿÿÿ8çìâÈñ1
+O
+java:S1068f"-Remove this unused "ratingBar" private field.(’•…øÿÿÿÿ8çìâÈñ1

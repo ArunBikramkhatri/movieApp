@@ -56,9 +56,10 @@ public class MovieRecyclerViewAdapter extends RecyclerView.Adapter<MovieRecycler
 
             Log.d(TAG, "onBindViewHolder: " + position);
             MovieResponse response = movieResponses.get(position);
-            holder.movieTitle.setText(response.getMovieName());
-            holder.ratingBar.setRating(Float.parseFloat(response.getRating()));
-            Picasso.get().load(response.getImageLink()).into(holder.movieImage);
+//            holder.movieTitle.setText(response.getMovieName());
+//            holder.ratingBar.setRating(Float.parseFloat(response.getRating()));
+            String  img_link  = "https://image.tmdb.org/t/p/w154"+ response.getImageLink();
+            Picasso.get().load(img_link).into(holder.movieImage);
 
 
             holder.movieLayout.setOnClickListener(new View.OnClickListener() {
@@ -105,8 +106,8 @@ public class MovieRecyclerViewAdapter extends RecyclerView.Adapter<MovieRecycler
             super(itemView);
 
             movieImage = itemView.findViewById(R.id.movie_image);
-            movieTitle = itemView.findViewById(R.id.movie_title);
-            ratingBar = itemView.findViewById(R.id.rating);
+//            movieTitle = itemView.findViewById(R.id.movie_title);
+//            ratingBar = itemView.findViewById(R.id.rating);
             movieLayout = itemView.findViewById(R.id.parent_movie_layout);
         }
     }

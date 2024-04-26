@@ -1,0 +1,12 @@
+
+[
+java:S1128">Remove this unused import 'android.content.BroadcastReceiver'.(Ãðõð8¹½¥Ìñ1
+Q
+java:S1128"4Remove this unused import 'android.content.Context'.(©Ê‰è8¹½¥Ìñ1
+O
+java:S1128"3Remove this unused import 'android.content.Intent'.(³ð‹G8¹½¥Ìñ1
+V
+java:S1128"4Remove this unused import 'android.net.NetworkInfo'.(«¸”ýøÿÿÿÿ8¹½¥Ìñ1
+S
+java:S1128
+"1Remove this unused import 'android.widget.Toast'.(©›ïÍúÿÿÿÿ8¹½¥Ìñ1

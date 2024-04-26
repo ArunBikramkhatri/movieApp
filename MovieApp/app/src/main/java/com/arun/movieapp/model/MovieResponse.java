@@ -57,7 +57,7 @@ public class MovieResponse {
     }
 
     public void setImageLink(String imageLink) {
-        this.imageLink = "https://image.tmdb.org/t/p/original"+ imageLink;
+        this.imageLink =  imageLink;
     }
 
     public void setRating(String rating) {

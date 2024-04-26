@@ -1,9 +1,10 @@
 package com.arun.movieapp.ui;
 
 import android.content.Context;
+import android.content.IntentFilter;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.GridLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,6 +17,7 @@ import com.arun.movieapp.R;
 import com.arun.movieapp.model.MovieResponseList;
 import com.arun.movieapp.model.MovieResponse;
 //import com.arun.movieapp.listeners.LastItemReachedCallback;
+import com.arun.movieapp.receivers.WifiStateReceiver;
 import com.arun.movieapp.service.MovieAPIBuilder;
 import com.arun.movieapp.ui.recyclerView.MovieRecyclerViewAdapter;
 import com.google.gson.Gson;
@@ -29,7 +31,7 @@ import okhttp3.Callback;
 import okhttp3.Response;
 //import retrofit2.Response;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  {
 
     private static final String TAG = MainActivity.class.getSimpleName();
 
@@ -47,9 +49,9 @@ public class MainActivity extends AppCompatActivity {
 
     boolean isLoading = false;
 
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         this.context = getApplicationContext();

@@ -1,10 +1,16 @@
 package com.arun.movieapp.ui;
 
+import android.app.Activity;
+import android.app.WallpaperManager;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -52,6 +58,8 @@ public class MovieActivity extends AppCompatActivity {
 
     private YouTubePlayerView youTubePlayerView;
     private RatingBar movieRatingBar ;
+    private Button setWallPaper ;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -70,6 +78,15 @@ public class MovieActivity extends AppCompatActivity {
         moviePosterBackground = findViewById(R.id.movie_img_background);
         youTubePlayerView = findViewById(R.id.trailer_player);
         movieRatingBar = findViewById(R.id.movie_rating);
+        setWallPaper = findViewById(R.id.set_wallpaper);
+
+
+        setWallPaper.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setWallPaper();
+            }
+        });
     }
 
     @Override
@@ -103,7 +120,8 @@ public class MovieActivity extends AppCompatActivity {
             movieTitle.setText(movie_title);
             movieDesc.setText(movie_desc);
             movieRatingBar.setRating(Float.parseFloat(rating));
-            Picasso.get().load(movie_image_link).into(moviePoster);
+            String  img_link  = "https://image.tmdb.org/t/p/original"+ movie_image_link;
+            Picasso.get().load(img_link).into(moviePoster);
             Picasso.get().load(movie_backdrop_image_link).into(moviePosterBackground);
             ;
         } catch (Exception e) {
@@ -127,7 +145,7 @@ public class MovieActivity extends AppCompatActivity {
                         super.onReady(youTubePlayer);
                         Log.d(TAG , "youtube ready ");
 //                               youTubePlayer.
-                        youTubePlayer.loadVideo(id , 0);
+                        youTubePlayer.cueVideo( id , 0);
                     }
                 });
 
@@ -145,6 +163,25 @@ public class MovieActivity extends AppCompatActivity {
                 });
             }
         });
+    }
+
+    public void setWallPaper(){
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+                WallpaperManager wallpaperManager = WallpaperManager.getInstance(getApplicationContext());
+                try {
+                    Bitmap bmpImg = ((BitmapDrawable)moviePoster.getDrawable()).getBitmap();
+
+                    wallpaperManager.setBitmap(bmpImg);
+                    Log.d(TAG , "wallpaper changed");
+                } catch (Exception e) {
+                    Log.e(TAG, "setWallPaper: " + e.getLocalizedMessage(), e);
+                    e.printStackTrace();
+                }
+//            }
+//        }).start();
+
     }
 
 

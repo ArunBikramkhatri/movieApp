@@ -1,16 +1,16 @@
 
 L
-java:S1066`"/Merge this if statement with the enclosing one.(«»ÉÓ8Ìõ½¨ñ1
+java:S1066b"/Merge this if statement with the enclosing one.(«»ÉÓ8òß¢Ìñ1
 K
-java:S1604—"(Make this anonymous inner class a lambda(˜ã¯şÿÿÿÿ8ÇñÁ¨ñ1
-X	java:S125"<This block of commented-out lines of code should be removed.(ã×è²8Ûõ½¨ñ1
+java:S1604™"(Make this anonymous inner class a lambda(˜ã¯şÿÿÿÿ8òß¢Ìñ1
+X	java:S125"<This block of commented-out lines of code should be removed.(ã×è²8†à¢Ìñ1
 £
-java:S1186O"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¼ÂÍùÿÿÿÿ8İõ½¨ñ1
+java:S1186Q"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¼ÂÍùÿÿÿÿ8Šà¢Ìñ1
 ¶
-java:S6548 "˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.(²Ú±8ìñÁ¨ñ1
-]	java:S125"<This block of commented-out lines of code should be removed.(¨’ÄŒúÿÿÿÿ8ßõ½¨ñ1
-]	java:S125I"<This block of commented-out lines of code should be removed.(ïºÏˆúÿÿÿÿ8©ò‹Æñ1
+java:S6548""˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.(²Ú±8‹à¢Ìñ1
+]	java:S125 "<This block of commented-out lines of code should be removed.(¨’ÄŒúÿÿÿÿ8Œà¢Ìñ1
+]	java:S125K"<This block of commented-out lines of code should be removed.(ïºÏˆúÿÿÿÿ8“à¢Ìñ1
 J
-java:S1185V"(Remove this method to simply inherit it.(öûöºÿÿÿÿÿ8èõ½¨ñ1
+java:S1185X"(Remove this method to simply inherit it.(öûöºÿÿÿÿÿ8”à¢Ìñ1
 P
-java:S1068."3Remove this unused "movieDetailList" private field.(ò˜¯8¯•Ã¨ñ1
+java:S10680"3Remove this unused "movieDetailList" private field.(ò˜¯8œà¢Ìñ1
