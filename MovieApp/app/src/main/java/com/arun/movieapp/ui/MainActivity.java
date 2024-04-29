@@ -1,10 +1,14 @@
 package com.arun.movieapp.ui;
 
 import android.content.Context;
-import android.content.IntentFilter;
 import android.net.ConnectivityManager;
+import android.net.NetworkCapabilities;
+import android.net.NetworkRequest;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Window;
+import android.view.WindowManager;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -12,12 +16,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.Room;
 
 import com.arun.movieapp.R;
-import com.arun.movieapp.model.MovieResponseList;
-import com.arun.movieapp.model.MovieResponse;
+import com.arun.movieapp.Utils.Utils;
+import com.arun.movieapp.database.MovieDao;
+import com.arun.movieapp.database.MovieDatabase;
+import com.arun.movieapp.dto.MovieDTO;
+import com.arun.movieapp.model.data.MovieData;
+import com.arun.movieapp.model.responses.MovieResponseList;
+import com.arun.movieapp.model.responses.MovieResponse;
 //import com.arun.movieapp.listeners.LastItemReachedCallback;
-import com.arun.movieapp.receivers.WifiStateReceiver;
+//import com.arun.movieapp.receivers.WifiStateReceiver;
 import com.arun.movieapp.service.MovieAPIBuilder;
 import com.arun.movieapp.ui.recyclerView.MovieRecyclerViewAdapter;
 import com.google.gson.Gson;
@@ -31,28 +41,32 @@ import okhttp3.Callback;
 import okhttp3.Response;
 //import retrofit2.Response;
 
-public class MainActivity extends AppCompatActivity  {
+public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = MainActivity.class.getSimpleName();
 
     private Context context;
     private MovieAPIBuilder movieAPIBuilder;
     private Gson gson;
-    private MovieResponseList movieResponseList ;
+    private MovieResponseList movieResponseList;
+
+    private List<MovieResponse> movieResponses;
 
     private RecyclerView recyclerView;
     private MovieRecyclerViewAdapter movieRecyclerViewAdapter;
 
     private static MainActivity mainActivity;
 
-    private List<MovieResponse> movieDetailList ;
+    private List<MovieResponse> movieDetailList;
 
     boolean isLoading = false;
 
+    private ConnectivityManager connectivityManager;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setFullScreen();
         setContentView(R.layout.activity_main);
         this.context = getApplicationContext();
         movieAPIBuilder = new MovieAPIBuilder();
@@ -62,15 +76,21 @@ public class MainActivity extends AppCompatActivity  {
         fetchTopRatedMovies();
         populateData();
         initAdapter();
+
         initScrollListener();
 
+    }
+
+    void setFullScreen() {
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
     }
 
 
-    void initAdapter(){
+    void initAdapter() {
         movieRecyclerViewAdapter = new MovieRecyclerViewAdapter(this, new ArrayList<>());
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(context,  2);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(context, 3);
         recyclerView.setLayoutManager(gridLayoutManager);
 //        recyclerView.setLayoutManager(new LinearLayoutManager(context));
 
@@ -78,11 +98,11 @@ public class MainActivity extends AppCompatActivity  {
     }
 
 
-    void populateData(){
+    void populateData() {
 
     }
 
-    void initScrollListener(){
+    void initScrollListener() {
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
@@ -94,10 +114,10 @@ public class MainActivity extends AppCompatActivity  {
                 super.onScrolled(recyclerView, dx, dy);
                 LinearLayoutManager linearLayoutManager = (LinearLayoutManager) recyclerView.getLayoutManager();
 
-                if(!isLoading){
-                    if(linearLayoutManager != null &&
-                            linearLayoutManager.findLastCompletelyVisibleItemPosition() == movieResponseList.getResponses().size() - 1 ){
-                        Log.d(TAG , "scroll last ");
+                if (!isLoading) {
+                    if (linearLayoutManager != null && movieResponses != null &&
+                            linearLayoutManager.findLastCompletelyVisibleItemPosition() == movieResponses.size() - 1) {
+                        Log.d(TAG, "scroll last ");
                         loadMore();
                         isLoading = true;
                     }
@@ -107,9 +127,10 @@ public class MainActivity extends AppCompatActivity  {
     }
 
 
-    void loadMore(){
-      fetchNextPage();
+    void loadMore() {
+        fetchNextPage();
     }
+
     void fetchMovieById() {
         try {
             movieAPIBuilder.getMovieDetailsByID(123, new Callback() {
@@ -133,7 +154,7 @@ public class MainActivity extends AppCompatActivity  {
         }
     }
 
-    public void fetchTopRatedMovies() {
+    private void fetchMovieFromAPI() {
         movieAPIBuilder.getTopRatedMovies(new Callback() {
             @Override
             public void onFailure(@NonNull Call call, @NonNull IOException e) {
@@ -145,22 +166,57 @@ public class MainActivity extends AppCompatActivity  {
                 if (response.isSuccessful()) {
                     String responseString = response.body().string();
                     movieResponseList = new Gson().fromJson(responseString, MovieResponseList.class);
-                    for (MovieResponse movieResponse : movieResponseList.getResponses()) {
+                    movieResponses = movieResponseList.getResponses();
+
+
+                    for (MovieResponse movieResponse : movieResponses) {
                         movieResponse.setImageLink(movieResponse.getImageLink());
                         movieResponse.setBackDropImage(movieResponse.getBackDropImage());
                     }
-                    isLoading =false ;
+                    isLoading = false;
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            movieRecyclerViewAdapter.addMoviesList(movieResponseList.getResponses());
+                            movieRecyclerViewAdapter.addMoviesList(movieResponses);
                         }
                     });
+                    new InsertMovieThread().start();
                 } else {
                     Log.d(TAG, response.code() + " " + response.message());
                 }
             }
         });
+    }
+
+    public void fetchTopRatedMovies() {
+        if (Utils.isNetworkAvailable(getApplicationContext())) {
+            Log.d(TAG, "network availale ");
+            fetchMovieFromAPI();
+        } else {
+            fetchMovieDetailsFromRoom();
+        }
+    }
+
+    private void fetchMovieDetailsFromRoom() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                MovieDatabase db = Room.databaseBuilder(getApplicationContext(),
+                        MovieDatabase.class, "hamro_cinema").build();
+                MovieDao movieDao = db.getMovieDao();
+                List<MovieData> movieDataList = movieDao.getTopRatedMovies();
+
+                List<MovieResponse> movieResponses1 = MovieDTO.mapToMovieResponseList(movieDataList);
+                movieResponses = movieResponses1;
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        movieRecyclerViewAdapter.addMoviesList(movieResponses);
+                    }
+                });
+            }
+        }).start();
+
     }
 
     void logException(Exception e) {
@@ -176,11 +232,28 @@ public class MainActivity extends AppCompatActivity  {
         return mainActivity;
     }
 
-    void fetchNextPage(){
-        Log.d(TAG , "fetch next page");
+    void fetchNextPage() {
+        Log.d(TAG, "fetch next page");
         int pageNo = movieAPIBuilder.getPageNo();
-        pageNo++;
+        pageNo = pageNo + 1;
+        Log.d(TAG, "fetchNextPage: " + pageNo);
         movieAPIBuilder.setPageNo(pageNo);
         fetchTopRatedMovies();
     }
+
+
+    class InsertMovieThread extends Thread {
+        @Override
+        public void run() {
+            super.run();
+            List<MovieData> movieDataList = MovieDTO.mapToMovieDataList(movieResponseList.getResponses());
+            MovieDatabase db = Room.databaseBuilder(getApplicationContext(),
+                    MovieDatabase.class, "hamro_cinema").build();
+            MovieDao movieDao = db.getMovieDao();
+
+            Log.d(TAG, "run: inserted into the database");
+            movieDao.insert(movieDataList);
+        }
+    }
+
 }

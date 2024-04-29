@@ -16,7 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.arun.movieapp.R;
 import com.arun.movieapp.Utils.Const;
-import com.arun.movieapp.model.MovieResponse;
+import com.arun.movieapp.model.responses.MovieResponse;
 import com.arun.movieapp.ui.MovieActivity;
 import com.squareup.picasso.Picasso;
 

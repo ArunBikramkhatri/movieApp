@@ -1,8 +1,0 @@
-
-‡
-java:S4165)"eRemove this useless assignment; "results" already holds the assigned value along all execution paths.(•Ø¶úÿÿÿÿ8çïáñ1
-o	java:S116"NRename this field "TAG" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÇØÖ¤ıÿÿÿÿ8çïáñ1
-R
-java:S1172("0Remove this unused method parameter "responses".(ÇÊ€†ûÿÿÿÿ8ëïáñ1
-Q
-java:S1656)"/Remove or correct this useless self-assignment.(•Ø¶úÿÿÿÿ8ìïáñ1

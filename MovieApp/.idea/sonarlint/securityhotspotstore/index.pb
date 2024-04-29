@@ -7,10 +7,6 @@ P
 build.gradle,f/0/f07866736216be0ee2aba49e392191aeae700a35
 @
 app/build.gradle,f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164
-l
-<app/src/main/java/com/arun/movieapp/model/MovieResponse.java,c/d/cdf9ba1fdd93653c0c55012443eff824f5b5b0b0
-p
-@app/src/main/java/com/arun/movieapp/model/MovieResponseList.java,7/3/73807451acd3efc390fe20ff05348f5bedbae5f8
 
 Qapp/src/main/java/com/arun/movieapp/ui/recyclerView/MovieRecyclerViewAdapter.java,b/5/b556c31000535aba1b95d5ffe2fa57e5765bb373
 i
@@ -21,10 +17,6 @@ e
 5app/src/main/java/com/arun/movieapp/api/MovieAPI.java,b/b/bb9a1a88b204213743246981588b91e15ceb2810
 m
 =app/src/main/java/com/arun/movieapp/service/MovieService.java,8/4/84cf0d13007cc102afe5d02ba2a10dca5ba0545a
-o
-?app/src/main/java/com/arun/movieapp/model/MovieTrailerData.java,d/a/da04ba113e2658dfb26e56a603655a0160373f23
-s
-Capp/src/main/java/com/arun/movieapp/model/MovieTrailerDataList.java,f/1/f127eb19c403394c6ac1939e5661b36741adad01
 p
 @app/src/main/java/com/arun/movieapp/service/MovieAPIBuilder.java,7/b/7b048f6e97d2113f31da37e043e67c1f1160699a
 y
@@ -32,6 +24,22 @@ Iapp/src/main/java/com/arun/movieapp/listeners/MovieDataFetchListener.java,8/2/
 z
 Japp/src/main/java/com/arun/movieapp/listeners/LastItemReachedCallback.java,4/6/4615b2fea05fd964da33f222fd6a3f38f9ce4c54
 t
-Dapp/src/main/java/com/arun/movieapp/receivers/WifiStateListener.java,5/2/521a3160431259f155ef6d27f33d60e7b74b87d0
-t
 Dapp/src/main/java/com/arun/movieapp/receivers/WifiStateReceiver.java,0/0/0044d7046dc6fe82cc36aa94677a89dde2353293
+v
+Fapp/src/main/java/com/arun/movieapp/model/responses/MovieResponse.java,b/0/b07948b0a96f4278c4d6a5d679148374719789c2
+j
+:app/src/main/java/com/arun/movieapp/database/MovieDao.java,f/a/fa8cd711011e6148fab87c33c81eb7bc76c7f95e
+m
+=app/src/main/java/com/arun/movieapp/model/data/MovieData.java,4/f/4f80b6b8d7a043dd64ca7bfebec0a3a2a0a99b7e
+e
+5app/src/main/java/com/arun/movieapp/dto/MovieDTO.java,5/b/5b818c6c0a2065005f65113755700eceedb288c6
+o
+?app/src/main/java/com/arun/movieapp/database/MovieDatabase.java,9/1/911c9d987673bef65832d3298889b1a2e77bf115
+z
+Japp/src/main/java/com/arun/movieapp/model/responses/MovieResponseList.java,d/f/df68ffb6459a8a739febe2e5e157d46e3f4a978d
+d
+4app/src/main/java/com/arun/movieapp/Utils/Utils.java,9/8/98d1442a3369c45db7f09bb96e1a7ad0d0bcc4ae
+y
+Iapp/src/main/java/com/arun/movieapp/model/responses/MovieTrailerData.java,1/7/17a85f1ba9f29de4ea70d6ffb7117c167299886b
+}
+Mapp/src/main/java/com/arun/movieapp/model/responses/MovieTrailerDataList.java,1/2/124bb10b954f1fc53bd0317b10b87d67e750201c

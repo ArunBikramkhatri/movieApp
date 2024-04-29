@@ -1,4 +1,4 @@
-package com.arun.movieapp.model;
+package com.arun.movieapp.model.responses;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -62,6 +62,10 @@ public class MovieResponse {
 
     public void setRating(String rating) {
         this.rating = rating;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     @Override

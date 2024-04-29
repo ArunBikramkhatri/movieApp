@@ -1,4 +1,4 @@
-package com.arun.movieapp.model;
+package com.arun.movieapp.model.responses;
 
 import android.util.Log;
 

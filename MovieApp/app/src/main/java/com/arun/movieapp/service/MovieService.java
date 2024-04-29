@@ -1,16 +1,14 @@
 package com.arun.movieapp.service;
 
-import android.app.Activity;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
 
 import com.arun.movieapp.listeners.MovieDataFetchListener;
-import com.arun.movieapp.model.MovieResponse;
-import com.arun.movieapp.model.MovieResponseList;
-import com.arun.movieapp.model.MovieTrailerData;
-import com.arun.movieapp.model.MovieTrailerDataList;
-import com.arun.movieapp.ui.MainActivity;
+import com.arun.movieapp.model.responses.MovieResponse;
+import com.arun.movieapp.model.responses.MovieResponseList;
+import com.arun.movieapp.model.responses.MovieTrailerData;
+import com.arun.movieapp.model.responses.MovieTrailerDataList;
 import com.arun.movieapp.ui.recyclerView.MovieRecyclerViewAdapter;
 import com.google.gson.Gson;
 
@@ -78,9 +76,9 @@ public class MovieService {
 
 
     void fetchNextPage() {
-        Log.d(TAG, "fetch next page");
         int pageNo = movieAPIBuilder.getPageNo();
         pageNo++;
+        Log.d(TAG, "page number");
         movieAPIBuilder.setPageNo(pageNo);
         fetchTopRatedMovies();
     }

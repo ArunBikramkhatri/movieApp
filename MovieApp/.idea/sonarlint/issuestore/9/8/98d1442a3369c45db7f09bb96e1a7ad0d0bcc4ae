@@ -1,0 +1,10 @@
+
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ñÒìãùÿÿÿÿ8ÎùÃÉò1
+W
+java:S1118":Add a private constructor to hide the implicit public one.(¼Øûì8ñ¹±Ëò1
+P
+java:S1874"3Remove this use of "NetworkInfo"; it is deprecated.(ÿ»¶Ã8€”±Ëò1
+Y
+java:S1874"<Remove this use of "getActiveNetworkInfo"; it is deprecated.(ÿ»¶Ã8‚”±Ëò1
+U
+java:S1874"3Remove this use of "isAvailable"; it is deprecated.(ëÕ•Çşÿÿÿÿ8ó¹±Ëò1
