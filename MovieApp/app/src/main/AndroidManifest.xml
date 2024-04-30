@@ -18,6 +18,7 @@
 
         <activity android:name=".ui.MainActivity"
             android:exported="true"
+            android:theme="@style/AppTheme"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,8 +27,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ui.MovieActivity">
-
+        <activity android:name=".ui.MovieActivity"
+            android:theme="@style/AppTheme">
         </activity>
 
     </application>

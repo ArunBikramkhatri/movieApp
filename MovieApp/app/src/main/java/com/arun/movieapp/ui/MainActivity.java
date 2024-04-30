@@ -1,6 +1,9 @@
 package com.arun.movieapp.ui;
 
+import android.app.ActionBar;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkCapabilities;
 import android.net.NetworkRequest;
@@ -66,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setFullScreen();
+//        setFullScreen();
         setContentView(R.layout.activity_main);
         this.context = getApplicationContext();
         movieAPIBuilder = new MovieAPIBuilder();
@@ -84,7 +87,6 @@ public class MainActivity extends AppCompatActivity {
     void setFullScreen() {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
     }
 
 
