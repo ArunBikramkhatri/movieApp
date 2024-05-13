@@ -1,0 +1,15 @@
+
+J
+java:S1604="(Make this anonymous inner class a lambda(˜ã¯şÿÿÿÿ8’¸Ôˆ÷1
+{
+java:S1450"^Remove the "biometricPrompt" field and declare it as a local variable in the relevant methods.(’ŠÃÊ8¨¸Ôˆ÷1
+t
+java:S1450"WRemove the "executor" field and declare it as a local variable in the relevant methods.(äü¥ 8¨¸Ôˆ÷1
+v
+java:S1450"YRemove the "promptInfo" field and declare it as a local variable in the relevant methods.(š¦«™8©¸Ôˆ÷1
+N
+java:S1602R",Remove useless curly braces around statement(éÅÜÆÿÿÿÿÿ8¶¸Ôˆ÷1
+^
+java:S1126Y"AReplace this if-then-else statement by a single return statement.(Ô¶­³8·¸Ôˆ÷1
+T
+java:S1874Y"7Remove this use of "canAuthenticate"; it is deprecated.(Ô¶­³8·¸Ôˆ÷1

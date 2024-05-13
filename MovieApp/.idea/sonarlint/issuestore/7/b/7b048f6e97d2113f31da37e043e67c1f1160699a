@@ -8,7 +8,7 @@ java:S1153/"1Directly append the argument of String.valueOf().(Ş”Öœ8œÒ†÷ğ1
 S
 java:S1153J"1Directly append the argument of String.valueOf().(ÒÓ¾ûÿÿÿÿ8¼ö‚ûğ1
 d
-java:S2637?"GParameter 1 to this call is marked "@NotNull" but null could be passed.(ßÇ¥ã8ªÒ†÷ğ1
-d
 java:S2637E"GParameter 1 to this call is marked "@NotNull" but null could be passed.(ßÇ¥ã8ªÒ†÷ğ1
+d
+java:S2637?"GParameter 1 to this call is marked "@NotNull" but null could be passed.(ßÇ¥ã8ªÒ†÷ğ1
 o	java:S116"NRename this field "URL" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Æø¢òûÿÿÿÿ8ªÒ†÷ğ1

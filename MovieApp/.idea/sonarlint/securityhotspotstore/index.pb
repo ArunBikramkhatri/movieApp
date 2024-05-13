@@ -43,3 +43,7 @@ y
 Iapp/src/main/java/com/arun/movieapp/model/responses/MovieTrailerData.java,1/7/17a85f1ba9f29de4ea70d6ffb7117c167299886b
 }
 Mapp/src/main/java/com/arun/movieapp/model/responses/MovieTrailerDataList.java,1/2/124bb10b954f1fc53bd0317b10b87d67e750201c
+k
+;app/src/main/java/com/arun/movieapp/security/BioMetric.java,c/d/cdb1e7f25b6ad5156aabef700cd56eb345078191
+i
+9app/src/main/java/com/arun/movieapp/ui/LoginActivity.java,0/9/093132527dba93520820643a6649f9a5062bcd80

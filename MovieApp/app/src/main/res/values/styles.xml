@@ -4,8 +4,8 @@
     <style name="FullScreenTheme" parent="Theme.AppCompat.NoActionBar">
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowContentOverlay">@null</item>
-    </style>
 
+    </style>
     <style name="DarkTheme" parent="Theme.Material3.Dark"></style>
 
 

@@ -1,0 +1,11 @@
+
+^
+java:S1126"AReplace this if-then-else statement by a single return statement.(Ô¶­³8½Œé‡÷1
+T
+java:S1874"7Remove this use of "canAuthenticate"; it is deprecated.(Ô¶­³8½Œé‡÷1
+J
+java:S11850"(Remove this method to simply inherit it.(§õ…œøÿÿÿÿ8ÁŒé‡÷1
+J
+java:S11855"(Remove this method to simply inherit it.(›ßñ²üÿÿÿÿ8ÂŒé‡÷1
+N
+java:S1128"1Remove this unused import 'android.app.Activity'.(‡ÊÍÆ8ºãý‡÷1
