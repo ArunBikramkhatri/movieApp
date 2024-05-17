@@ -1,0 +1,8 @@
+
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ëÈá»8Â¦Ê¬ø1
+u	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(¹ˆÁ 8Õ©Ê¬ø1
+D
+java:S1185"(Remove this method to simply inherit it.(¥Ë©8ø©Ê¬ø1
+X	java:S125"<This block of commented-out lines of code should be removed.(ûÂ¦Î8„ªÊ¬ø1
+E
+java:S1068")Remove this unused "title" private field.(¹ˆÁ 8…ªÊ¬ø1

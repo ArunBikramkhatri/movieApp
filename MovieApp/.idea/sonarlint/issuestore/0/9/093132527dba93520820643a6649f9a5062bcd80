@@ -8,8 +8,8 @@ java:S1450"WRemove the "executor" field and declare it as a local variable in 
 v
 java:S1450"YRemove the "promptInfo" field and declare it as a local variable in the relevant methods.(š¦«™8©¸Ôˆ÷1
 N
-java:S1602R",Remove useless curly braces around statement(éÅÜÆÿÿÿÿÿ8¶¸Ôˆ÷1
+java:S1602Q",Remove useless curly braces around statement(éÅÜÆÿÿÿÿÿ8¼¹ù‰÷1
 ^
-java:S1126Y"AReplace this if-then-else statement by a single return statement.(Ô¶­³8·¸Ôˆ÷1
+java:S1126Z"AReplace this if-then-else statement by a single return statement.(Ô¶­³8½¹ù‰÷1
 T
-java:S1874Y"7Remove this use of "canAuthenticate"; it is deprecated.(Ô¶­³8·¸Ôˆ÷1
+java:S1874Z"7Remove this use of "canAuthenticate"; it is deprecated.(Ô¶­³8½¹ù‰÷1

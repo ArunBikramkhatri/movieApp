@@ -47,3 +47,11 @@ k
 ;app/src/main/java/com/arun/movieapp/security/BioMetric.java,c/d/cdb1e7f25b6ad5156aabef700cd56eb345078191
 i
 9app/src/main/java/com/arun/movieapp/ui/LoginActivity.java,0/9/093132527dba93520820643a6649f9a5062bcd80
+q
+Aapp/src/main/java/com/arun/movieapp/ui/viewPager/FragmentOne.java,1/a/1a57eb93c58cfe7c411d15c2fa731324e0424849
+q
+Aapp/src/main/java/com/arun/movieapp/ui/viewPager/FragmentTwo.java,3/1/316adfaa2870fadc1e03912ae373c0230b76bc8e
+o
+?app/src/main/java/com/arun/movieapp/ui/viewPager/VpAdapter.java,4/7/4769716f9034db5e48e4dded21f6ce7d21da0165
+w
+Gapp/src/main/java/com/arun/movieapp/ui/viewPager/ViewPagerActivity.java,c/5/c5970b331a9a905d132ce8d33e5709588fadc1be

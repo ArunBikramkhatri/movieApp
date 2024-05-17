@@ -15,14 +15,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MovieApp"
         tools:targetApi="31" >
-        <activity android:name=".ui.LoginActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".ui.LoginActivity">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
+
         <activity android:name=".ui.MainActivity"
             android:exported="true"
             android:theme="@style/AppTheme"
@@ -32,6 +28,15 @@
 
         <activity android:name=".ui.MovieActivity"
             android:theme="@style/AppTheme">
+        </activity>
+
+        <activity android:name=".ui.viewPager.ViewPagerActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
     </application>

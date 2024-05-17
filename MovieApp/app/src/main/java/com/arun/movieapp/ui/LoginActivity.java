@@ -61,8 +61,7 @@ public class LoginActivity extends AppCompatActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            Intent intent = new Intent(LoginActivity.this , MainActivity.class);
-                            startActivity(intent);
+                           switchToMainActivity();
                         }
                     });
 
@@ -82,6 +81,8 @@ public class LoginActivity extends AppCompatActivity {
             biometricLoginButton.setOnClickListener(view -> {
                 biometricPrompt.authenticate(promptInfo);
             });
+        }else {
+          switchToMainActivity();
         }
     }
 
@@ -91,6 +92,11 @@ public class LoginActivity extends AppCompatActivity {
         } else {
             return false;
         }
+    }
+
+    public void switchToMainActivity(){
+        Intent intent = new Intent(LoginActivity.this , MainActivity.class);
+        startActivity(intent);
     }
 
 }

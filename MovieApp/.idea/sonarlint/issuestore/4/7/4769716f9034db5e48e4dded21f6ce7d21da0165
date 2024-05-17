@@ -1,0 +1,13 @@
+
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ëÈá»8ß³º¬ø1
+P
+java:S1128".Remove this unused import 'android.os.Bundle'.(°şÊóøÿÿÿÿ8î³º¬ø1
+d
+java:S1128"BRemove this unused import 'androidx.fragment.app.FragmentManager'.(¯­ë‹ıÿÿÿÿ8ï³º¬ø1
+c
+java:S1128	"GRemove this unused import 'androidx.fragment.app.FragmentPagerAdapter'.(ş÷S8ï³º¬ø1
+[
+java:S1128
+"9Remove this unused import 'androidx.lifecycle.Lifecycle'.(üÚûÁıÿÿÿÿ8ï³º¬ø1
+M
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8ï³º¬ø1
